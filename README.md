@@ -34,12 +34,13 @@ Or just double-click run.bat.
 After install
 
 Open a new terminal and run:
-powershell
-
+```powershell
 g++ --version
+```
 
 You should see g++ (x86_64-posix-seh-rev0, Built by MinGW-Builds project) 16.2.0 or similar.
 Compile a test program
+```
 cpp
 
 // hello.cpp
@@ -48,23 +49,4 @@ int main() {
     std::cout << "Hello, MinGW!\n";
     return 0;
 }
-
-powershell
-
-g++ hello.cpp -o hello.exe -static-libgcc -static-libstdc++
-.\hello.exe
-
-Using -static-libgcc -static-libstdc++ produces a self-contained .exe with no runtime DLL dependencies.
-Exit codes
-Code ↕	Meaning ↕
-0	Installation verified successfully
-1	Installation completed with unresolved issues (check ~/mingw_install_report.txt)
-Uninstall
-powershell
-
-Remove-Item -Recurse -Force C:\mingw64
-
-Then remove C:\mingw64\bin from your user PATH via System Properties → Environment Variables.
-License
-
-MIT — see LICENSE.
+```
